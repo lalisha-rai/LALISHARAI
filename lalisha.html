@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+     
+
+    
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup-content {
+    background-color:white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--container-shadow-color);
+    text-align: center;
+    position: relative;
+  }
+
+  .popup-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #04b2d5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .popup-buttons button:hover {
+    background-color: #0299bb;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  .theme-toggle {
+      cursor: pointer;
+      font-size: 24px;
+      margin-right: 20px;
+  }
+      </style>
+</head>
+
+<body class="dark-mode">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="logo"></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbarmain" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Project</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Social
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://www.facebook.com/">Facebook</a></li>
+                            <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                            <li><a class="dropdown-item" href="#">Instagram</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle">
+            <label for="toggle" class="toggle">
+                <span class="toggle__handler">Dark mode</span>
+            </label>
+        </div>
+        
+        <i class='bx bx-moon theme-toggle' id="theme-toggle"></i>
+        <a href="login.html" class="loginbtn">Registration/login</a>
+        
+        
+    </nav>
+    
+
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <div class="left">
+                    <h2>Badminton</h2>
+                    <p>Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are "singles" (with one player per side) and "doubles" (with two players per side). Badminton is often played as a casual outdoor activity in a yard or on a beach; formal games are played on a rectangular indoor court. Points are scored by striking the shuttlecock with the racquet and landing it within the other team's half of the court.</p>
+                    
+                </div>
+                <div class="right" style="background-image: url('images/th1.jpg');"></div>
+            </div>
+
+            <div class="slide">
+                <div class="left">
+                    <h2>SELF-INTRODUCTION</h2>
+                    <p>Hello and Welcome my Portfolio website, I'm Lalisha Rai </p>
+                    
+                </div>
+                <div class="right" style="background-image: url('images/sss.jpeg');"></div>
+            </div>
+
+            <div class="slide">
+                <div class="left">
+                    <h2>Network Security</h2>
+                    <p>Network security consists of the policies, processes and practices adopted to prevent, detect and monitor unauthorized access, misuse, modification, or denial of a computer network and network-accessible resources. Network security involves the authorization of access to data in a network, which is controlled by the network administrator.</p>
+                    
+                </div>
+                <div class="right" style="background-image: url('images/sr2.jpg');"></div>
+            </div>
+            <div class="slide">
+                <div class="left">
+                    <h2>Cyber Security</h2>
+                    <p>Cyber security is the practice of protecting networks, applications, confidential or sensitive data, and users from cyber attacks. Cyber attacks are malicious attempts by individuals or groups to gain unauthorized access to computer systems, networks, and devices in order to steal information, disrupt operations, or launch larger attacks.</p>
+                          
+                  </div>
+                <div class="right" style="background-image: url('images/sr1.jpg');"></div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+          <span class="close" id="close-popup">&times;</span>
+          <h2>Welcome!</h2>
+          <p>Would you like to Sign In or Sign Up?</p>
+          <div class="popup-buttons">
+            <button onclick="window.location.href='login.html'">Sign In</button>
+            <button onclick="window.location.href='login.html'">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+    
+
+    <footer class="footer">
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>Address: 123 Street Name, City, Country</p>
+            <p>Email: contact@example.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"> facebook</a>
+            </div>
+        </div>
+        <div class="section map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093743!2d144.95592361531812!3d-37.81720974210537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e33!2sGoogle!5e0!3m2!1sen!2sau!4v1599579838123!5m2!1sen!2sau"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Your Website. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        const toggleSwitch = document.querySelector('.toggle');
+
+            toggleSwitch.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+            });
+
+
+
+    </script>
+   
+   
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Toggle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>/* Light Mode Styles */
+    :root {
+        --bg-color: #fff;
+        --text-color: #000;
+        --nav-bg-color: #f8f9fa;
+        --nav-text-color: #000;
+        --container-bg-color: #fff;
+        --footer-bg-color: #343a40;
+        --footer-text-color: #fff;
+    }
+    
+    /* Dark Mode Styles */
+    .dark-mode {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --nav-bg-color: #333;
+        --nav-text-color: #fff;
+        --container-bg-color: #444;
+        --footer-bg-color: #000;
+        --footer-text-color: #ddd;
+    }
+    
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    nav {
+        background-color: var(--nav-bg-color);
+    }
+    
+    .nav-link {
+        color: var(--nav-text-color);
+    }
+    
+    footer {
+        background-color: var(--footer-bg-color);
+        color: var(--footer-text-color);
+    }
+    
+    .theme-toggle {
+        cursor: pointer;
+        font-size: 24px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    
+
+
+</style
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Website</a>
+            <label class="theme-toggle">
+                <input type="checkbox" id="theme-switch">
+                Toggle Dark Mode
+            </label>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is an example of light and dark mode toggle.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const themeSwitch = document.getElementById('theme-switch');
+
+    // Check if there's a saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.toggle('dark-mode', savedTheme === 'dark');
+        themeSwitch.checked = savedTheme === 'dark';
+    }
+
+    // Add event listener to the theme switch
+    themeSwitch.addEventListener('change', () => {
+        const isDarkMode = themeSwitch.checked;
+        body.classList.toggle('dark-mode', isDarkMode);
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+});
+</script>
+</body>
+</html>

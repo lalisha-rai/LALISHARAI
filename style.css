@@ -1,0 +1,198 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic logo styling */
+.logo {
+    background: url(images/logo.png) no-repeat center center;
+    background-size: contain; /* Ensures the logo fits within the dimensions */
+    width: 80px;
+    height: 60px;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center; /* Vertically centers items in the navbar */
+    padding: 10px 20px; /* Adds some padding around the navbar */
+    background-color: #333; /* Example background color for the navbar */
+}
+
+/* Ensuring the logo sits properly in the navbar */
+.navbar .logo {
+    margin-right: auto; /* Aligns the logo to the left of the navbar */
+}
+
+/* Login button styling */
+.loginbtn {
+    margin-right: 50px;
+    background-color: blue;
+    color: #fff;
+    padding: 6px 29px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* Navbar main links styling */
+.navbarmain {
+    margin-left: 100px;
+}
+
+/* Slider container styling */
+.slider {
+    width: 80%;
+    height: 88vh; /* Set the height of the slider */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    padding-bottom: 20px; /* Add padding to ensure the footer does not overlap */
+}
+
+/* Container for the slides */
+.slide-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Individual slide styling */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%; /* Ensure slides take full height */
+}
+
+/* Left and right section within the slide */
+.left, .right {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Left section styling */
+.left {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.left h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.left p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.left button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Right section styling */
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+/* Footer styling */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer .section {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
+}
+
+.footer .map {
+    flex: 1;
+    padding: 10px;
+    min-width: 300px;
+}
+
+.footer .map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+.footer .section h2, .footer .section h3 {
+    margin-bottom: 10px;
+}
+
+.footer .section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .section ul li {
+    margin-bottom: 5px;
+}
+
+.footer .section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer .section .social-links a {
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer .section .social-links a:hover {
+    color: #007BFF;
+}
+
+.footer .copyright {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .navbar {
+    background-color: #111;
+}
+
+.dark-mode .left {
+    background-color: #333;
+}
+
+.dark-mode .footer {
+    background-color: #111;
+}

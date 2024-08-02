@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="nav">
+        <nav>
+            
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+            <div class="login">
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Your one-stop solution for web development and design</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </section>
+    <section class="slider">
+        <div class="slides">
+            <img src="pexels-photo-5895915.jpg" alt="Image 1" class="active">
+            <img src="pexels-photo-5895915.jpg" alt="Image 2">
+            <img src="pexels-photo-5895915.jpg" alt="Image 3">
+        </div>
+    </section>
+   
+
+    <footer>
+        <div class="footer-section">
+            <h4>Home</h4>
+            <ul>
+                <li><a href="#">Details</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>About</h4>
+            <ul>
+                <li><a href="#">career</a></li>
+                <li><a href="#">learning</a></li>
+                <li><a href="#">Education</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4> My Project</h4>
+            <ul>
+                <li><a href="#"> Project</a></li>
+                <li><a href="#">my bio</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>social</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js">
+        document.addEventListener("DOMContentLoaded", function() {
+    let slides = document.querySelectorAll('.slides img');
+    let currentSlide = 0;
+
+    slides[currentSlide].classList.add('active');
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 2000);
+});
+
+    </script>
+    
+    
+</body>
+</html>
